@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\mainheader_layout_comment.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\mainheader_layout_comment.xml"
+    },
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\mainheader_layout_sub.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\mainheader_layout_sub.xml"
+    },
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\progress.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\progress.xml"
+    },
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\mainheader_layout_post_review.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\mainheader_layout_post_review.xml"
+    },
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_index.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\activity_index.xml"
+    },
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\location.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\location.xml"
+    },
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\progress2.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\progress2.xml"
+    },
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\customerror.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\customerror.xml"
+    },
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row_for_comments2.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\list_row_for_comments2.xml"
+    },
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\register.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\register.xml"
+    },
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\stars.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\stars.xml"
+    },
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\rating.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\rating.xml"
+    },
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\spinner_item.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\spinner_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\list_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\comments.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\comments.xml"
+    },
+    {
+        "merged": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\mainheader_layout.xml",
+        "source": "C:\\Users\\PUSHPAL\\AndroidStudioProjects\\ChennaiILP1\\app\\src\\main\\res\\layout\\mainheader_layout.xml"
+    }
+]

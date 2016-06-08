@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="ScrollViewSize" >
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/mainheader_layout" />
+        
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/click_notpress"
+            android:hint="@string/a2"
+            android:padding="10dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#afafaf"
+            android:textColorHint="#cccccc"
+            android:inputType="number"
+            tools:ignore="TextFields,PxUsage" >
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/click_notpress"
+            android:hint="@string/a3"
+            android:padding="10dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#afafaf"
+            android:textColorHint="#cccccc"
+            tools:ignore="TextFields,PxUsage" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="20px"
+            android:text="@string/a6"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#659f35"
+            tools:ignore="HardcodedText,PxUsage" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/click_notpress"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/click_notpress"
+            android:hint="@string/a4"
+            android:padding="10dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#afafaf"
+            android:textColorHint="#cccccc"
+            tools:ignore="TextFields,PxUsage" />
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/click_notpress"
+            android:hint="@string/a0"
+            android:padding="10dp"
+            android:clickable="true"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#afafaf"
+            android:textColorHint="#cccccc"
+            tools:ignore="TextFields,PxUsage" />
+            
+        <LinearLayout
+        android:id="@+id/button1"
+        android:layout_below="@+id/LinearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        android:onClick="submit"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/search1"
+        android:clickable="true"
+        tools:ignore="ObsoleteLayoutParam" >
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/c6"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#ffffff"
+            android:textStyle="bold">
+
+        </TextView>
+    </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

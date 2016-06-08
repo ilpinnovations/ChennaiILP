@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/height_head"
+    android:layout_alignParentTop="true"
+    android:background="#4caf50"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/editText12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:ems="10"
+                android:hint="@string/c1"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                tools:ignore="TextFields,PxUsage" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/button3"
+            android:layout_width="@dimen/width"
+            android:layout_height="fill_parent"
+            android:background="@drawable/btn_touch"
+            android:src="@drawable/search"
+            android:onClick="search"/>
+
+        <ImageButton
+            android:id="@+id/btn_refresh"
+            android:layout_width="@dimen/width"
+            android:layout_height="fill_parent"
+            android:background="@drawable/btn_touch"
+            android:src="@drawable/ic_menu_refresh"/>
+    </LinearLayout>
+
+</RelativeLayout>

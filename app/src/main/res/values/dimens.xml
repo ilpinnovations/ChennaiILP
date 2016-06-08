@@ -1,0 +1,12 @@
+<resources>
+        
+    <dimen name="title">17dp</dimen>
+    <dimen name="rating">15dip</dimen>
+    <dimen name="genre">13dip</dimen>
+    <dimen name="year">12dip</dimen>
+
+    <dimen name="height_head">90dp</dimen>
+    <dimen name="divider_size">0.5dp</dimen>
+    <dimen name="width">60dp</dimen>
+
+</resources>

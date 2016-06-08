@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Chennai ILP Hostel Search</string>
+    <string name="refresh">Refresh</string>
+    <string name="rating">Sort by Ratings</string>
+    <string name="name">Sort by Name</string>
+    <string name="a0">TCS Email Address</string>
+    <string name="a1">Search</string>
+    <string name="a2">Employee ID</string>
+    <string name="a3">Full Name</string>
+    <string name="a4">Learner\'s Group</string>
+    <string name="a5">Your review goes here...</string>
+    <string name="a6">Choose your location</string>
+    <string name="a7">></string>
+    <string name="a8">&lt;</string>
+    <string name="a9">Year</string>
+    <string name="b1">OK</string>
+    <string name="b2">123</string>
+    <string name="b3">Your comment</string>
+    <string name="b4">Post</string>
+    <string name="b5">Post Review</string>
+    <string name="b6">Hotel Name</string>
+    <string name="b7">Address</string>
+    <string name="b8">Street</string>
+    <string name="b9">Comments</string>
+    <string name="c1">Search Hostel</string>
+    <string name="c2">Title</string>
+    <string name="c3">Rating</string>
+    <string name="c4">Genre</string>
+    <string name="c5">Address</string>
+    <string name="c6">Register</string>
+    <string name="c7">Reviews</string>
+    <string name="c8">Chennai ILP Hostel Search</string>
+    <string name="c9">\@tcs.com</string>
+    <string name="d1">RATED</string>
+    <string name="d2">5.0</string>
+    <string name="d3">RATED AS</string>
+    <string name="d4">4.5</string>
+    <string name="d5">Reviews</string>
+    <string name="d6">Chennai ILP Hostel Search</string>
+    <string name="d7">Just a moment...</string>
+
+</resources>

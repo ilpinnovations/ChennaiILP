@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".MainActivity"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/mainheader_layout_sub" />
+
+    <LinearLayout
+        android:id="@+id/shortcuts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/touch"
+                android:src="@drawable/rhtl"
+                android:onClick="rate_high_to_low" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/touch"
+                android:src="@drawable/rlth"
+                android:onClick="rate_low_to_high" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/touch"
+                android:src="@drawable/nhtl"
+                android:onClick="name_high_to_low" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/touch"
+                android:src="@drawable/nlth"
+                android:onClick="name_low_to_high" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/shortcuts"
+        android:background="#e5e5e5"/>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view"
+        android:dividerHeight="1dp"
+        android:divider="#e5e5e5"
+        android:focusable="true"
+        android:scrollbars="none" />
+</RelativeLayout>
