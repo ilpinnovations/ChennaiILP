@@ -41,4 +41,7 @@
     <string name="d6">Chennai ILP Hostel Search</string>
     <string name="d7">Just a moment...</string>
 
+    <string name="check_permission_key">permission_key</string>
+    <string name="permission_default_value">false</string>
+
 </resources>

@@ -5,14 +5,23 @@ import java.util.List;
 import java.util.regex.Pattern;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -24,6 +33,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import static android.Manifest.permission.CALL_PHONE;
+import static android.Manifest.permission.CAMERA;
+import static android.Manifest.permission.READ_PHONE_STATE;
+import static android.Manifest.permission.READ_SMS;
+import static android.Manifest.permission.SEND_SMS;
 
 @SuppressLint("DefaultLocale") 
 @SuppressWarnings("unused")
@@ -42,49 +60,150 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 	// Log tag
 	private static final String TAG = MainActivity.class.getSimpleName();
 
+
+	private static final int PERMISSION_REQUEST_CODE = 200;
+
+    private EditText emailEditText;
+    private Spinner spinner2;
+    private EditText e1;
+    private EditText e2;
+    private Spinner  sp;
+    private EditText e4;
+    private EditText e5;
+
+
+	private boolean checkPermission() {
+		int result = ContextCompat.checkSelfPermission(getApplicationContext(), ACCESS_FINE_LOCATION);
+		int result1 = ContextCompat.checkSelfPermission(getApplicationContext(), ACCESS_COARSE_LOCATION);
+		int result2 = ContextCompat.checkSelfPermission(getApplicationContext(), CAMERA);
+		int result3 = ContextCompat.checkSelfPermission(getApplicationContext(), SEND_SMS);
+		int result4 = ContextCompat.checkSelfPermission(getApplicationContext(), CALL_PHONE);
+		int result5 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_PHONE_STATE);
+
+		return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED && result2 == PackageManager.PERMISSION_GRANTED && result3 == PackageManager.PERMISSION_GRANTED && result4 == PackageManager.PERMISSION_GRANTED && result5 == PackageManager.PERMISSION_GRANTED;
+	}
+
+	private void requestPermission() {
+
+		ActivityCompat.requestPermissions(this, new String[]{ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, CAMERA, READ_SMS, CALL_PHONE, READ_PHONE_STATE}, PERMISSION_REQUEST_CODE);
+
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+		switch (requestCode) {
+			case PERMISSION_REQUEST_CODE:
+				if (grantResults.length > 0) {
+
+                    boolean locationAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                    boolean cameraAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+
+                    if (locationAccepted && cameraAccepted) {
+                        Toast.makeText(getApplicationContext(), "Permission Granted, Now you can access location data and camera.", Toast.LENGTH_SHORT).show();
+                        onPermissionFetched();
+                    }
+					else {
+
+						Toast.makeText(getApplicationContext(), "Permission Denied, You cannot access location data and camera.", Toast.LENGTH_SHORT).show();
+
+						if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+							if (shouldShowRequestPermissionRationale(ACCESS_FINE_LOCATION)) {
+								showMessageOKCancel("You need to allow access to both the permissions",
+										new DialogInterface.OnClickListener() {
+											@Override
+											public void onClick(DialogInterface dialog, int which) {
+												if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+													requestPermissions(new String[]{ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, CAMERA, READ_SMS, CALL_PHONE, READ_PHONE_STATE},
+															PERMISSION_REQUEST_CODE);
+												}
+											}
+										});
+								return;
+							}
+						}
+
+					}
+				}
+
+				break;
+		}
+	}
+
+	private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
+		new AlertDialog.Builder(getApplicationContext())
+				.setMessage(message)
+				.setPositiveButton("OK", okListener)
+				.setNegativeButton("Cancel", null)
+				.create()
+				.show();
+	}
+
 	// Movies json url
 	@SuppressWarnings("static-access")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+        setContentView(R.layout.register);
 
-		setContentView(R.layout.register);
-		TelephonyManager telephonyManager = (TelephonyManager)getSystemService(this.TELEPHONY_SERVICE);
- 		String t = telephonyManager.getDeviceId().toString();
- 
+		SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+		String defaultValue = getResources().getString(R.string.permission_default_value);
+
+		String checkPermission = sharedPref.getString(getResources().getString(R.string.check_permission_key), defaultValue);
+
+        emailEditText = (EditText)findViewById(R.id.editText5);
+        spinner2 = (Spinner) findViewById(R.id.spinner1);
+        e1 = (EditText)findViewById(R.id.editText1);
+        e2 = (EditText)findViewById(R.id.editText2);
+        sp = (Spinner)findViewById(R.id.spinner1);
+        e4 = (EditText)findViewById(R.id.editText4);
+        e5 = (EditText)findViewById(R.id.editText5);
+
+		if (checkPermission.equalsIgnoreCase("false")){
+			requestPermission();
+			SharedPreferences.Editor editor = sharedPref.edit();
+			editor.putString(getResources().getString(R.string.check_permission_key), "true");
+			editor.commit();
+		}else {
+            onPermissionFetched();
+        }
+
+	}
+
+    public void onPermissionFetched(){
+        Log.i(TAG, "OnPermissionFetched");
+        TelephonyManager telephonyManager = (TelephonyManager)getSystemService(this.TELEPHONY_SERVICE);
+        String t = telephonyManager.getDeviceId();
+
         new checkalreadyregistered(this).execute(t);
-		Spinner spinner2 = (Spinner) findViewById(R.id.spinner1);
-         
-		final EditText email = (EditText)findViewById(R.id.editText5);
-		
-		email.setOnFocusChangeListener(new OnFocusChangeListener() {
-			@Override
-			public void onFocusChange(View v, boolean hasFocus) {
-				
-				if(hasFocus){
-					email.setText("@tcs.com");
-				}	
-			}
-		});
-		
+
+        emailEditText.setOnFocusChangeListener(new OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+
+                if(hasFocus){
+                    emailEditText.setHint("@tcs.com");
+                }
+            }
+        });
+
         // Spinner click listener
         spinner2.setOnItemSelectedListener(this);
 
         // Spinner Drop down elements
         List<String> categories1 = new ArrayList<String>();
-        categories1.add("Chennai"); 
-        categories1.add("Trivandrum"); 	               
+        categories1.add("Chennai");
+        categories1.add("Trivandrum");
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter1 = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_item, categories1);
-        dataAdapter1.setDropDownViewResource(R.drawable.spinner_rowloki); 
+        dataAdapter1.setDropDownViewResource(R.layout.spinner_rowloki);
         // Drop down layout style - list view with radio button
-   
+
         // attaching data adapter to spinner
         spinner2.setAdapter(dataAdapter1);
-         
-		listner();
-	}
+
+        listner();
+    }
 
 	@Override
 	public void onDestroy() {
@@ -94,11 +213,6 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 	@SuppressWarnings("static-access")
 	public void submit(View v) {
 		String text1 = "";
-		EditText e1 = (EditText)findViewById(R.id.editText1);
-		EditText e2 = (EditText)findViewById(R.id.editText2);
-		Spinner  sp = (Spinner)findViewById(R.id.spinner1);
-		EditText e4 = (EditText)findViewById(R.id.editText4);
-		EditText e5 = (EditText)findViewById(R.id.editText5);
 		
 		if(e1.getText().toString().length() == 0)
 			text1 = "Enter Employee Id";
@@ -142,7 +256,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 		}
 		else {
 			TelephonyManager telephonyManager = (TelephonyManager)getSystemService(this.TELEPHONY_SERVICE);
-			String t = telephonyManager.getDeviceId().toString();
+			String t = telephonyManager.getDeviceId();
 
 			new serversignin(this).execute(
 					e1.getText().toString(),
@@ -185,7 +299,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 
 					 // set the custom dialog components - text, image and button
 					 TextView text = (TextView) dialog.findViewById(R.id.text);
-					 text.setText("No Internet Connection");
+					 text.setText("No Internet Connection\nPress OK to exit!");
 
 					 Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
 					 // if button is clicked, close the custom dialog
@@ -193,6 +307,8 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 					 dialogButton.setOnClickListener(new OnClickListener() {
 							@Override
 							public void onClick(View v) {
+                                Log.i(TAG, "onClick: finish()");
+                                finish();
 								dialog.dismiss();
 							}
 						});
@@ -244,7 +360,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 
 					  // set the custom dialog components - text, image and button
 					  TextView text = (TextView) dialog.findViewById(R.id.text);
-					  text.setText("No Internet Connection");
+					  text.setText("No Internet Connection\nPress OK to exit!");
 
 
 					  Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
@@ -254,6 +370,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 							@Override
 							public void onClick(View v) {
 								dialog.dismiss();
+                                finish();
 							}
 						});
 						dialog.show();

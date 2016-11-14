@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp" >
+
+    <Button
+        android:id="@+id/img"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_toLeftOf="@+id/button3"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/avatar" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/a3"
+        android:paddingLeft="3dp"
+        android:textColor="#9E9E9E"
+        android:layout_toRightOf="@+id/img"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/ratinglabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignLeft="@+id/title"
+        android:text="@string/d1"
+        android:textStyle="bold"
+        android:padding="3dp"
+        android:textColor="#BDBDBD"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ratinglabel"
+        android:layout_toRightOf="@id/ratinglabel"
+        android:text="@string/d2"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:background="@drawable/rateg" />
+    
+    <TextView
+        android:id="@+id/genre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rating"
+        android:text="@string/b9"
+        android:layout_marginTop="10dp"
+        android:padding="3dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#9E9E9E" />
+
+</RelativeLayout>

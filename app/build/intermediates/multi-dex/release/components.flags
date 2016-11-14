@@ -1,0 +1,57 @@
+-injars 'C:\Shubham\abhishek_kt\ChennaiILP\app\build\intermediates\transforms\jarMerging\release\jars\1\1f\combined.jar'
+-outjars 'C:\Shubham\abhishek_kt\ChennaiILP\app\build\intermediates\multi-dex\release\componentClasses.jar'
+
+-libraryjars 'C:\sdk\build-tools\24.0.1\lib\shrinkedAndroid.jar'
+
+-forceprocessing
+-dontoptimize
+-dontobfuscate
+-dontusemixedcaseclassnames
+-dontpreverify
+-dontnote **,com.android.tools.fd.**,android.support.multidex.MultiDexExtractor
+-dontwarn **
+-printconfiguration 'C:\Shubham\abhishek_kt\ChennaiILP\app\build\intermediates\multi-dex\release\components.flags'
+
+
+-keep class info.androidhive.customlistviewvolley.app.AppController {
+    <init>();
+    void attachBaseContext(android.content.Context);
+}
+
+-keep class info.androidhive.customlistviewvolley.MainActivity {
+    <init>();
+}
+
+-keep class info.androidhive.customlistviewvolley.IndexActivity {
+    <init>();
+}
+
+-keep class info.androidhive.customlistviewvolley.list {
+    <init>();
+}
+
+-keep class info.androidhive.customlistviewvolley.rating2 {
+    <init>();
+}
+
+-keep class info.androidhive.customlistviewvolley.comments {
+    <init>();
+}
+
+-keep class info.androidhive.customlistviewvolley.MapActivity {
+    <init>();
+}
+
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+
+-keep public class * extends java.lang.annotation.Annotation {
+    <fields>;
+    <methods>;
+}
+
+-keep class com.android.tools.fd.** {
+    <fields>;
+    <methods>;
+}

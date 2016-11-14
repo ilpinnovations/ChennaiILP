@@ -1,0 +1,20 @@
+-keep class info.androidhive.customlistviewvolley.app.AppController {
+    <init>();
+    void attachBaseContext(android.content.Context);
+}
+-keep class info.androidhive.customlistviewvolley.MainActivity { <init>(); }
+-keep class info.androidhive.customlistviewvolley.IndexActivity { <init>(); }
+-keep class info.androidhive.customlistviewvolley.list { <init>(); }
+-keep class info.androidhive.customlistviewvolley.rating2 { <init>(); }
+-keep class info.androidhive.customlistviewvolley.comments { <init>(); }
+-keep class info.androidhive.customlistviewvolley.MapActivity { <init>(); }
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+-keep public class * extends java.lang.annotation.Annotation {
+    *;
+}
+-keep class com.android.tools.fd.** {
+    *;
+}
+-dontnote com.android.tools.fd.**,android.support.multidex.MultiDexExtractor

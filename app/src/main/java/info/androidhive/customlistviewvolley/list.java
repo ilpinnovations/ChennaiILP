@@ -9,6 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,7 +17,9 @@ import android.view.KeyEvent;
 import android.app.ProgressDialog;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsListView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -43,6 +46,7 @@ public class list extends Activity implements OnItemSelectedListener {
 	String sort_flag ="lthname";
 	ImageButton btnRefresh;
 	EditText E1;
+	ImageButton searchButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +60,15 @@ public class list extends Activity implements OnItemSelectedListener {
    	 	callfiller();
 
 		btnRefresh = (ImageButton) findViewById(R.id.btn_refresh);
+        searchButton = (ImageButton) findViewById(R.id.button3);
+        searchButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                E1.requestFocus();
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.showSoftInput(E1, InputMethodManager.SHOW_IMPLICIT);
+            }
+        });
 		btnRefresh.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {

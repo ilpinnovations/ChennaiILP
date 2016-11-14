@@ -36,6 +36,8 @@ import android.widget.AdapterView.OnItemClickListener;
 @SuppressWarnings("unused")
 
 public class MapActivity extends FragmentActivity  {
+
+	private static final String TAG = MapActivity.class.getSimpleName();
     
 	private GoogleMap googleMap;
 	
@@ -74,6 +76,8 @@ public class MapActivity extends FragmentActivity  {
 		    String lon = extras.getString("lon");
 		    String name = extras.getString("name");
 		    String address = extras.getString("address");
+
+			Log.i(TAG, "Lat: " + lat + " lon: " + lon + " name: " + name + " address: " + address);
 		    
 			double latitude = Double.parseDouble(lat);
 			double longitude = Double.parseDouble(lon);
